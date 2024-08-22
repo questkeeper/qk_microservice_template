@@ -1,5 +1,6 @@
 import { Context } from "hono";
 import { supabase } from "@/utils/initSupabase";
+import { getCachedResponse, cacheResponse } from "@/utils/cacheService";
 import jwt from "@tsndr/cloudflare-worker-jwt";
 
 const CACHE_TTL = 55 * 60; // 55 minutes
@@ -43,12 +44,10 @@ async function jwtMiddleware(
 
     // Check cache
     const cache = caches.default;
-    const cacheKey = `${c.req.url}::users-${userId}`;
-    const cachedResponse = await cache.match(cacheKey); // Check if user is in cache already
     const userKey = "user" as never;
+    const cachedUser = await getCachedResponse(c, cache, "users", userId); // Check if user is in cache already
 
-    if (cachedResponse) {
-      const cachedUser = await cachedResponse.json();
+    if (cachedUser) {
       c.set(userKey, cachedUser);
       return next();
     }
@@ -67,9 +66,7 @@ async function jwtMiddleware(
     }
 
     // Cache the user data
-    const cacheResponse = new Response(JSON.stringify(data.user));
-    cacheResponse.headers.set("Cache-Control", `max-age=${CACHE_TTL}`);
-    await cache.put(cacheKey, cacheResponse);
+    await cacheResponse(c, cache, "users", userId, data.user, CACHE_TTL);
 
     // Add the user to the context
     c.set(userKey, data.user);
