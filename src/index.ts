@@ -1,5 +1,5 @@
 // Hono imports
-import { OpenAPIHono} from "@hono/zod-openapi";
+import { OpenAPIHono } from "@hono/zod-openapi";
 
 // Middleware Imports
 import apiKeyMiddleware from "@/middleware/apiKeyMiddleware";
@@ -11,6 +11,7 @@ import initSupabaseMiddleware from "@/middleware/initSupabaseMiddleware";
 import ping from "@/routes/ping";
 import swaggerUIHandler, { docInfo } from "@/routes/docs";
 import { exampleRoute, exampleRouteHandler } from "@/routes/exampleRoute";
+import jwtMiddleware from "./middleware/jwtMiddleware";
 
 // You should edit these values to match your service
 const title = "QuestKeeper Template Microservice API";
@@ -42,6 +43,7 @@ const middleware: any = [
   appendTrailingSlash(),
   apiKeyMiddleware,
   initSupabaseMiddleware, // Initialize Supabase
+  // jwtMiddleware, // Uncomment this line to enable JWT middleware, necessary for client-facing services. API-Key should be used for internal services.
 ];
 middleware.forEach((m: any) => app.use(m));
 
@@ -64,6 +66,5 @@ middleware.forEach((m: any) => app.use(m));
  *
  */
 app.openapi(exampleRoute, exampleRouteHandler); // Implements actual openapi standards... Should probably comment/delete this out.
-
 
 export default app;
