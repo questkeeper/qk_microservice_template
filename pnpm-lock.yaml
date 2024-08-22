@@ -17,12 +17,12 @@ importers:
       '@supabase/supabase-js':
         specifier: ^2.45.1
         version: 2.45.1
+      '@tsndr/cloudflare-worker-jwt':
+        specifier: ^2.5.3
+        version: 2.5.3
       hono:
         specifier: ^4.5.7
         version: 4.5.7
-      vite-tsconfig-paths:
-        specifier: ^5.0.1
-        version: 5.0.1(vite@5.4.2(@types/node@22.5.0))
     devDependencies:
       '@cloudflare/workers-types':
         specifier: ^4.20240821.1
@@ -33,6 +33,9 @@ importers:
       vite:
         specifier: ^5.4.2
         version: 5.4.2(@types/node@22.5.0)
+      vite-tsconfig-paths:
+        specifier: ^5.0.1
+        version: 5.0.1(vite@5.4.2(@types/node@22.5.0))
       vitest:
         specifier: ^2.0.5
         version: 2.0.5(@types/node@22.5.0)
@@ -524,6 +527,9 @@ packages:
 
   '@supabase/supabase-js@2.45.1':
     resolution: {integrity: sha512-/PVe3lXmalazD8BGMIoI7+ttvT1mLXy13lNcoAPtjP1TDDY83g8csZbVR6l+0/RZtvJxl3LGXfTJT4bjWgC5Nw==}
+
+  '@tsndr/cloudflare-worker-jwt@2.5.3':
+    resolution: {integrity: sha512-zbdvjRG86y/ObiBgTJrzBC39t2FcaeGwB6AV7VO4LvHKJNyZvLYRbKT68eaoJhnJldyHhs7yZ69neRVdUd9knA==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -1404,6 +1410,8 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
+
+  '@tsndr/cloudflare-worker-jwt@2.5.3': {}
 
   '@types/estree@1.0.5': {}
 
