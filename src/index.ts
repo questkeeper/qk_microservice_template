@@ -6,12 +6,12 @@ import apiKeyMiddleware from "@/middleware/apiKeyMiddleware";
 import corsMiddleware from "@/middleware/corsMiddleware";
 import { appendTrailingSlash } from "hono/trailing-slash";
 import initSupabaseMiddleware from "@/middleware/initSupabaseMiddleware";
+import jwtMiddleware from "./middleware/jwtMiddleware";
 
 // Route Imports
 import ping from "@/routes/ping";
 import swaggerUIHandler, { docInfo } from "@/routes/docs";
 import { exampleRoute, exampleRouteHandler } from "@/routes/exampleRoute";
-import jwtMiddleware from "./middleware/jwtMiddleware";
 
 // You should edit these values to match your service
 const title = "QuestKeeper Template Microservice API";
