@@ -3,7 +3,7 @@ import { supabase } from "@/utils/initSupabase";
 import { getCachedResponse, cacheResponse } from "@/utils/cacheService";
 import jwt from "@tsndr/cloudflare-worker-jwt";
 
-const CACHE_TTL = 55 * 60; // 55 minutes
+export const CACHE_TTL = 55 * 60; // 55 minutes
 
 async function jwtMiddleware(
   c: Context<{}, any, {}>,

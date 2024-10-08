@@ -7,6 +7,7 @@ import corsMiddleware from "@/middleware/corsMiddleware";
 import { appendTrailingSlash } from "hono/trailing-slash";
 import initSupabaseMiddleware from "@/middleware/initSupabaseMiddleware";
 import jwtMiddleware from "./middleware/jwtMiddleware";
+import initDrizzleMiddleware from "./middleware/initDrizzleMiddleware";
 
 // Route Imports
 import ping from "@/routes/ping";
@@ -44,6 +45,7 @@ const middleware: any = [
   apiKeyMiddleware,
   initSupabaseMiddleware, // Initialize Supabase
   // jwtMiddleware, // Uncomment this line to enable JWT middleware, necessary for client-facing services. API-Key should be used for internal services.
+  initDrizzleMiddleware
 ];
 middleware.forEach((m: any) => app.use(m));
 
