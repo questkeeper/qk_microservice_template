@@ -1,5 +1,3 @@
-import { Context } from "hono";
-
 const QUALIFIED_CACHE_URL = "https://api.questkeeper.app/v1/";
 
 export async function getCachedResponse(
