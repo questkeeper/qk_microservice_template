@@ -1,7 +1,7 @@
 import { Context } from "hono";
-import { supabase } from "@/utils/initSupabase";
 import { getCachedResponse, cacheResponse } from "@/utils/cacheService";
 import jwt from "@tsndr/cloudflare-worker-jwt";
+import { SupabaseClient } from "@supabase/supabase-js";
 
 export const CACHE_TTL = 55 * 60; // 55 minutes
 
@@ -15,6 +15,8 @@ async function jwtMiddleware(
     c.status(401);
     return c.json({ error: "Unauthorized" });
   }
+
+  const supabase = c.get("supabase" as never) as SupabaseClient;
 
   if (supabase === null) {
     c.status(500);
