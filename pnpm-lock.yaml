@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@hono/swagger-ui':
         specifier: ^0.4.1
-        version: 0.4.1(hono@4.6.3)
+        version: 0.4.1(hono@4.6.5)
       '@hono/zod-openapi':
         specifier: ^0.15.3
-        version: 0.15.3(hono@4.6.3)(zod@3.23.8)
+        version: 0.15.3(hono@4.6.5)(zod@3.23.8)
       '@supabase/supabase-js':
         specifier: ^2.45.4
         version: 2.45.4
@@ -24,8 +24,8 @@ importers:
         specifier: ^0.34.1
         version: 0.34.1(@cloudflare/workers-types@4.20241004.0)(@types/pg@8.11.10)(pg@8.13.0)(postgres@3.4.4)
       hono:
-        specifier: ^4.6.3
-        version: 4.6.3
+        specifier: ^4.6.5
+        version: 4.6.5
       pg:
         specifier: ^8.13.0
         version: 8.13.0
@@ -38,7 +38,7 @@ importers:
         version: 4.20241004.0
       '@hono/node-server':
         specifier: ^1.13.1
-        version: 1.13.1(hono@4.6.3)
+        version: 1.13.1(hono@4.6.5)
       '@types/pg':
         specifier: ^8.11.10
         version: 8.11.10
@@ -1137,8 +1137,8 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  hono@4.6.3:
-    resolution: {integrity: sha512-0LeEuBNFeSHGqZ9sNVVgZjB1V5fmhkBSB0hZrpqStSMLOWgfLy0dHOvrjbJh0H2khsjet6rbHfWTHY0kpYThKQ==}
+  hono@4.6.5:
+    resolution: {integrity: sha512-qsmN3V5fgtwdKARGLgwwHvcdLKursMd+YOt69eGpl1dUCJb8mCd7hZfyZnBYjxCegBG7qkJRQRUy2oO25yHcyQ==}
     engines: {node: '>=16.9.0'}
 
   is-binary-path@2.1.0:
@@ -1902,24 +1902,24 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@hono/node-server@1.13.1(hono@4.6.3)':
+  '@hono/node-server@1.13.1(hono@4.6.5)':
     dependencies:
-      hono: 4.6.3
+      hono: 4.6.5
 
-  '@hono/swagger-ui@0.4.1(hono@4.6.3)':
+  '@hono/swagger-ui@0.4.1(hono@4.6.5)':
     dependencies:
-      hono: 4.6.3
+      hono: 4.6.5
 
-  '@hono/zod-openapi@0.15.3(hono@4.6.3)(zod@3.23.8)':
+  '@hono/zod-openapi@0.15.3(hono@4.6.5)(zod@3.23.8)':
     dependencies:
       '@asteasolutions/zod-to-openapi': 7.2.0(zod@3.23.8)
-      '@hono/zod-validator': 0.2.2(hono@4.6.3)(zod@3.23.8)
-      hono: 4.6.3
+      '@hono/zod-validator': 0.2.2(hono@4.6.5)(zod@3.23.8)
+      hono: 4.6.5
       zod: 3.23.8
 
-  '@hono/zod-validator@0.2.2(hono@4.6.3)(zod@3.23.8)':
+  '@hono/zod-validator@0.2.2(hono@4.6.5)(zod@3.23.8)':
     dependencies:
-      hono: 4.6.3
+      hono: 4.6.5
       zod: 3.23.8
 
   '@jridgewell/resolve-uri@3.1.2': {}
@@ -2340,7 +2340,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  hono@4.6.3: {}
+  hono@4.6.5: {}
 
   is-binary-path@2.1.0:
     dependencies:
